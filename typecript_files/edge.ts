@@ -10,15 +10,16 @@
  *                                                                                      */
 //========================================================================================
 export default class Edge {
-    firstNode: number;
-    secondNode: number;
+    firstNode: string;
+    secondNode: string;
     weight: number;
   
     constructor() {
-      this.firstNode = this.secondNode = this.weight = NaN;
+      this.firstNode = this.secondNode = "";
+      this.weight = NaN;
     }
   
-    getNodes(): Array<number> {
+    getNodes(): Array<string> {
       return [this.firstNode, this.secondNode]
     }
   
@@ -26,7 +27,7 @@ export default class Edge {
       return this.weight;
     }
   
-    createNewEdge(firstNode: number, secondNode: number, weight: number) {
+    createNewEdge(firstNode: string, secondNode: string, weight: number) {
       this.firstNode = firstNode;
       this.secondNode = secondNode;
       this.weight = weight;
@@ -37,13 +38,20 @@ export default class Edge {
         (edge.firstNode == this.secondNode && edge.secondNode == this.firstNode);
     }
   
-    equalToNodes(firstNode: number, secondNode: number): boolean {
+    equalToNodes(firstNode: string, secondNode: string): boolean {
       return (firstNode == this.firstNode && secondNode == this.secondNode) ||
         (firstNode == this.secondNode && secondNode == this.firstNode);
     }
   
     isLighter(edge: Edge){
       return this.weight <= edge.getWeight()
+    }
+
+    contains(node: string){
+      if(this.firstNode == node || this.secondNode == node)
+        return true;
+      else
+        return false;
     }
   }
   

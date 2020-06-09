@@ -11,14 +11,14 @@ export default class Graph {
   name: string;
   numberOfNodes: number;
   numberOfEdges: number;
-  adjacencyList: Map<number, number[]>;
+  adjacencyList: Map<string, string[]>;
   edgeList: Array<Edge>;
   optimalCut: number;
 
   constructor() {
     this.name = "";
     this.numberOfEdges = this.numberOfNodes = 0;
-    this.adjacencyList = new Map<number, number[]>();
+    this.adjacencyList = new Map<string, string[]>();
     this.edgeList = new Array<Edge>();
     this.optimalCut = Infinity;
   }
@@ -39,7 +39,7 @@ export default class Graph {
     return this.numberOfEdges;
   }
 
-  getList(): Map<number, number[]> {
+  getList(): Map<string, string[]> {
     return this.adjacencyList;
   }
 
@@ -55,7 +55,7 @@ export default class Graph {
       return this.optimalCut;
   }
 
-  weightBetween(firstNode: number, secondNode: number): number {
+  weightBetween(firstNode: string, secondNode: string): number {
     let minWeight = Infinity;
     let found : boolean = false;
 
@@ -70,17 +70,11 @@ export default class Graph {
   }
 
   //Controllo se c'è un lato che connette due nodi
-  areNodeConnected(firstNode: number, secondNode: number): boolean {
+  areNodeConnected(firstNode: string, secondNode: string): boolean {
     return this.weightBetween(firstNode, secondNode) != Infinity ? true : false;
   }
   
-  getSortedWeights(): Array<Edge> {
-    return this.edgeList.sort(//Ordino l'array di lati usando i pesi
-      (a: Edge, b: Edge) => a.getWeight() - b.getWeight()
-    );
-  }
-
-  addToAdjacencyList(node: number, adjacentNode: number) {
+  addToAdjacencyList(node: string, adjacentNode: string) {
     if (!this.adjacencyList.has(node))
       //Se il nodo non è presente nella lista di adiacenza
       this.adjacencyList.set(node, []); // aggiungo il muovo nodo
@@ -99,10 +93,10 @@ export default class Graph {
       
       if (!isNaN(parseInt(nodeValues[0]))) {
         for(let index = 1; index < nodeValues.length; index++){
-            this.addToAdjacencyList(parseInt(nodeValues[0]), parseInt(nodeValues[index]));
+            this.addToAdjacencyList(nodeValues[0], nodeValues[index]);
 
             let newEdge = new Edge();
-            newEdge.createNewEdge(parseInt(nodeValues[0]), parseInt(nodeValues[index]),1);
+            newEdge.createNewEdge(nodeValues[0], nodeValues[index],1);
             this.insertNewEdge(newEdge);
         }
       }
@@ -111,8 +105,8 @@ export default class Graph {
     this.numberOfNodes = this.adjacencyList.size;
   }
 
-  getAdjacentNodesOf(node: number): number[] {
-    let adjacentNodeList: number[] = [];
+  getAdjacentNodesOf(node: string): string[] {
+    let adjacentNodeList: string[] = [];
 
     if (this.adjacencyList.has(node))
       adjacentNodeList = this.adjacencyList.get(node);
@@ -145,4 +139,51 @@ export default class Graph {
     if(!found)
       this.edgeList.push(newEdge);
   }
+
+  deleteNode(node: string){
+      //Operazioni su liste di adiacenza
+      this.adjacencyList.delete(node); // rimuovo la lista di adiacenza del nodo
+
+      this.adjacencyList.forEach(element => { // rimuovo il nodo dalle liste di adiacenza degli altri nodi
+        let nodeIndex = element.indexOf(node);
+
+          if(nodeIndex != -1)
+            element.splice(nodeIndex,1)
+      });
+    
+      //Operazioni su lista di lati
+      for(let index = 0; index < this.edgeList.length; index++){
+          if(this.edgeList[index].contains(node))
+            this.edgeList.splice(index, 1);
+      }
+
+      this.numberOfEdges = this.edgeList.length;
+      this.numberOfNodes = this.adjacencyList.size;
+  }
+  
+  addNewNode(newNode: string, newAdjList: string[]){
+      this.adjacencyList.set(newNode, newAdjList); // aggiungo il nuovo nodo e la nuova lista di adiacenza
+
+      newAdjList.forEach(element => {
+          this.addToAdjacencyList(element, newNode); // aggiungo il nuovo nodo alle liste di adiacenza degli altri elementi (element)
+
+          let newEdge = new Edge();
+          newEdge.createNewEdge(element, newNode, 1); // creo i lati tra newNode e gli altri elementi
+          this.insertNewEdge(newEdge);
+      });
+
+      this.numberOfNodes = this.adjacencyList.size;
+      this.numberOfEdges = this.edgeList.length;
+
+  }
 }
+
+
+
+/* 
+Attenzione a due cose:
+Se tra due nodi ci possono essere piu lati allora bisogna:
+1) Modificare l'inserimento di un nuovo lato (insertNewEdge) in modo che non tenga solo quello di peso minimo ma tutti
+2) Quando vado ad eliminare i lati devo tener conto che possono essere piu di uno sopratutto in Karger -> removeFrom
+
+*/
