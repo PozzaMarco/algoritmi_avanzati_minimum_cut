@@ -19,8 +19,8 @@ function karger_impl(graph: Graph, repetitions: number): number{
     let minCut = Infinity;
 
     for(let repeat = 0; repeat < repetitions; repeat++){
-        let cut = fullContraction(graph);//FARE DEEP COPY DEL GRAFO
-
+        let cut = fullContraction(graph);
+        console.log(cut)
         if(cut < minCut)
             minCut = cut;
     }
@@ -29,13 +29,11 @@ function karger_impl(graph: Graph, repetitions: number): number{
 }
 
 function fullContraction(graph: Graph): number{
-    let contractedGraph: Graph = graph;
+    let contractedGraph : Graph = graph.makeCopy(); //Creo una copia dell'oggetto
 
     while(contractedGraph.getNumberOfNodes() > 2){
         let edge = randomEdge(contractedGraph.getEdges());
-        //console.log("Selected edge: [" + edge.firstNode + "-" + edge.secondNode+"]")
         contractedGraph = contraction(contractedGraph, edge);
-        //console.log(contractedGraph.adjacencyList)
     }
 
     return contractedGraph.getEdges().length;

@@ -55,7 +55,31 @@ export default class Graph {
   getOptimalCut(): number{
       return this.optimalCut;
   }
+  
+  makeCopy(): Graph{
+    let deepCopy = new Graph();
+    
+    deepCopy.name = this.name;
+    deepCopy.numberOfNodes = this.numberOfNodes;
+    deepCopy.numberOfEdges = this.numberOfEdges;  
+    deepCopy.optimalCut = this.optimalCut;
 
+    this.adjacencyList.forEach((adjList, node) => {
+      deepCopy.adjacencyList.set(node, JSON.parse(JSON.stringify(adjList)));
+
+      });
+
+    this.edgeList.forEach(edge => {
+      let newEdge = new Edge();
+      newEdge.firstNode = edge.firstNode;
+      newEdge.secondNode = edge.secondNode;
+      newEdge.weight = edge.weight;
+
+      deepCopy.edgeList.push(newEdge);
+    });
+
+    return deepCopy;
+  }
   weightBetween(firstNode: string, secondNode: string): number {
     let minWeight = Infinity;
     let found : boolean = false;
@@ -140,7 +164,7 @@ export default class Graph {
           nodeAdjList.splice(index, 1);
           index = nodeAdjList.indexOf(node);
         }
-        
+
       });
     
       //Operazioni su lista di lati
