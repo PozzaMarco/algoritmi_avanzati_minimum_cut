@@ -6,6 +6,7 @@
  *                                                                                      */
 //========================================================================================
 import Edge from "./edge";
+import { indexOf } from "core-js/fn/array";
 
 export default class Graph {
   name: string;
@@ -80,7 +81,7 @@ export default class Graph {
       this.adjacencyList.set(node, []); // aggiungo il muovo nodo
 
     //Aggiungo un nuovo nodo alla lista di adiacenza
-    if(!this.adjacencyList.get(node).includes(adjacentNode))
+    //if(!this.adjacencyList.get(node).includes(adjacentNode))
       this.adjacencyList.get(node).push(adjacentNode);
   }
 
@@ -125,18 +126,6 @@ export default class Graph {
   }
 
   insertNewEdge(newEdge: Edge){
-    let found : boolean = false;
-
-    //Itero su tutti i lati dell'array
-    for(let index = 0; index < this.edgeList.length && !found; index++){
-      //Se il lato è già presente e il nuovo lato ha peso minore, allora aggiorno solamente il peso
-      if(newEdge.equalTo(this.edgeList[index]) && newEdge.isLighter(this.edgeList[index])){
-        this.edgeList[index].weight = newEdge.weight;
-        found = true;
-      }
-    }
-    //Se il lato non è presente lo aggiungo
-    if(!found)
       this.edgeList.push(newEdge);
   }
 
@@ -144,17 +133,22 @@ export default class Graph {
       //Operazioni su liste di adiacenza
       this.adjacencyList.delete(node); // rimuovo la lista di adiacenza del nodo
 
-      this.adjacencyList.forEach(element => { // rimuovo il nodo dalle liste di adiacenza degli altri nodi
-        let nodeIndex = element.indexOf(node);
+      this.adjacencyList.forEach(nodeAdjList => { // rimuovo il nodo dalle liste di adiacenza degli altri nodi
+        let index = nodeAdjList.indexOf(node);
 
-          if(nodeIndex != -1)
-            element.splice(nodeIndex,1)
+        while(index != -1){
+          nodeAdjList.splice(index, 1);
+          index = nodeAdjList.indexOf(node);
+        }
+        
       });
     
       //Operazioni su lista di lati
       for(let index = 0; index < this.edgeList.length; index++){
-          if(this.edgeList[index].contains(node))
+          if(this.edgeList[index].contains(node)){
             this.edgeList.splice(index, 1);
+            index = index-1;
+          }
       }
 
       this.numberOfEdges = this.edgeList.length;
@@ -177,13 +171,3 @@ export default class Graph {
 
   }
 }
-
-
-
-/* 
-Attenzione a due cose:
-Se tra due nodi ci possono essere piu lati allora bisogna:
-1) Modificare l'inserimento di un nuovo lato (insertNewEdge) in modo che non tenga solo quello di peso minimo ma tutti
-2) Quando vado ad eliminare i lati devo tener conto che possono essere piu di uno sopratutto in Karger -> removeFrom
-
-*/

@@ -19,8 +19,8 @@ function karger_impl(graph: Graph, repetitions: number): number{
     let minCut = Infinity;
 
     for(let repeat = 0; repeat < repetitions; repeat++){
-        let cut = fullContraction(graph);
-        
+        let cut = fullContraction(graph);//FARE DEEP COPY DEL GRAFO
+
         if(cut < minCut)
             minCut = cut;
     }
@@ -29,13 +29,13 @@ function karger_impl(graph: Graph, repetitions: number): number{
 }
 
 function fullContraction(graph: Graph): number{
-    let numberOfNodes = graph.getNumberOfNodes();
     let contractedGraph: Graph = graph;
 
-    for(let node = 0; node != numberOfNodes - 2; node++){
+    while(contractedGraph.getNumberOfNodes() > 2){
         let edge = randomEdge(contractedGraph.getEdges());
+        //console.log("Selected edge: [" + edge.firstNode + "-" + edge.secondNode+"]")
         contractedGraph = contraction(contractedGraph, edge);
-        console.log(contractedGraph.getEdges())
+        //console.log(contractedGraph.adjacencyList)
     }
 
     return contractedGraph.getEdges().length;
@@ -56,7 +56,7 @@ function contraction(graph: Graph, edge: Edge): Graph{
     graph.deleteNode(secondNode)
 
     //creo il nuovo nodo e la sua nuova lista di adiacenza
-    let newNode = firstNode + "_" + secondNode;
+    let newNode = firstNode + "," + secondNode;
     let adjList = firstADJ.concat(secondADJ);
 
     //aggiungo il nuovo nodo e la sua nuova lista di adiacenza (anche relazioni sui lati)
