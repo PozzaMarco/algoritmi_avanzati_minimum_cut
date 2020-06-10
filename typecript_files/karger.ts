@@ -7,25 +7,40 @@
 
 import Graph from "./graph";
 import Edge from "./edge";
+import {performance} from "perf_hooks";
 
-function karger(graph: Graph, d_constant: number): number{
-    let k = optimal_k(graph.getNumberOfNodes(), d_constant);
-    let minCut = karger_impl(graph, k);
-
-    return minCut;
-}
-
-function karger_impl(graph: Graph, repetitions: number): number{
+function karger(graph: Graph, d_constant: number): [number, number, number, number]{
+    let FCTime = Infinity; // tempo impiegato da fullContraction. Siccome viene fatto K volte allora ritorno la media
+    let KTime = Infinity; // tempo impiegato da Karger
+    let DTime = Infinity; // discovery time per trovare il mincut
     let minCut = Infinity;
 
+    let k = optimal_k(graph.getNumberOfNodes(), d_constant);
+    KTime  = performance.now();
+
+    [minCut, FCTime, DTime] = karger_impl(graph, k);
+
+    return [minCut, performance.now() - KTime, FCTime, DTime];
+}
+
+function karger_impl(graph: Graph, repetitions: number): [number, number, number]{
+    let minCut = Infinity;
+    let meanFCTime = 0;
+    let DTime = 0;
+    let startDTime = performance.now();
+
     for(let repeat = 0; repeat < repetitions; repeat++){
+        let startFCTime = performance.now();
         let cut = fullContraction(graph);
-        console.log(cut)
-        if(cut < minCut)
+        meanFCTime += performance.now() - startFCTime;
+
+        if(cut < minCut){
             minCut = cut;
+            DTime = performance.now() - startDTime;
+        }
     }
 
-    return minCut;
+    return [minCut, meanFCTime/repetitions, DTime];
 }
 
 function fullContraction(graph: Graph): number{
