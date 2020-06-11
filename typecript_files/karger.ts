@@ -9,7 +9,7 @@ import Graph from "./graph";
 import Edge from "./edge";
 import {performance} from "perf_hooks";
 
-function karger(graph: Graph, d_constant: number): [number, number, number, number]{
+function karger(graph: Graph, d_constant: number): [number, number, number, number, number]{
     let fullContractionTime = 0; // fullContraction viene fatto k volte quindi il tempo ritornato è la media su tutti i tempi di fullContraction
     let kargerStartingTime = 0;
     let discoveryTime = 0;
@@ -20,7 +20,7 @@ function karger(graph: Graph, d_constant: number): [number, number, number, numb
 
     [minCut, fullContractionTime, discoveryTime] = karger_impl(graph, k);
 
-    return [minCut, performance.now() - kargerStartingTime, fullContractionTime, discoveryTime];
+    return [minCut, performance.now() - kargerStartingTime, fullContractionTime, discoveryTime, k];
 }
 
 function karger_impl(graph: Graph, repetitions: number): [number, number, number]{
@@ -29,7 +29,7 @@ function karger_impl(graph: Graph, repetitions: number): [number, number, number
     let discoveryTime = 0;
     let discoveryStartingTime = performance.now();
     let startingTime = performance.now();
-    
+
     if(performance.now() - startingTime < 200000){//Timer che limita le iterazioni a circa 3 minuti
         for(let repeat = 0; repeat < repetitions; repeat++){
 
