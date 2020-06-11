@@ -28,15 +28,19 @@ function karger_impl(graph: Graph, repetitions: number): [number, number, number
     let fullContractionTotalTime = 0;
     let discoveryTime = 0;
     let discoveryStartingTime = performance.now();
+    let startingTime = performance.now();
+    
+    if(performance.now() - startingTime < 200000){//Timer che limita le iterazioni a circa 3 minuti
+        for(let repeat = 0; repeat < repetitions; repeat++){
 
-    for(let repeat = 0; repeat < repetitions; repeat++){
-        let fullContractionStartingTime = performance.now();
-        let cut = fullContraction(graph);
-        fullContractionTotalTime += performance.now() - fullContractionStartingTime;
+            let fullContractionStartingTime = performance.now();
+            let cut = fullContraction(graph);
+            fullContractionTotalTime += performance.now() - fullContractionStartingTime;
 
-        if(cut < minCut){
-            minCut = cut;
-            discoveryTime = performance.now() - discoveryStartingTime;
+            if(cut < minCut){
+                minCut = cut;
+                discoveryTime = performance.now() - discoveryStartingTime;
+            }
         }
     }
     return [minCut, fullContractionTotalTime/repetitions, discoveryTime];
