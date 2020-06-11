@@ -10,37 +10,36 @@ import Edge from "./edge";
 import {performance} from "perf_hooks";
 
 function karger(graph: Graph, d_constant: number): [number, number, number, number]{
-    let FCTime = Infinity; // tempo impiegato da fullContraction. Siccome viene fatto K volte allora ritorno la media
-    let KTime = Infinity; // tempo impiegato da Karger
-    let DTime = Infinity; // discovery time per trovare il mincut
+    let fullContractionTime = 0; // fullContraction viene fatto k volte quindi il tempo ritornato è la media su tutti i tempi di fullContraction
+    let kargerStartingTime = 0;
+    let discoveryTime = 0;
     let minCut = Infinity;
 
     let k = optimal_k(graph.getNumberOfNodes(), d_constant);
-    KTime  = performance.now();
+    kargerStartingTime = performance.now();
 
-    [minCut, FCTime, DTime] = karger_impl(graph, k);
+    [minCut, fullContractionTime, discoveryTime] = karger_impl(graph, k);
 
-    return [minCut, performance.now() - KTime, FCTime, DTime];
+    return [minCut, performance.now() - kargerStartingTime, fullContractionTime, discoveryTime];
 }
 
 function karger_impl(graph: Graph, repetitions: number): [number, number, number]{
     let minCut = Infinity;
-    let meanFCTime = 0;
-    let DTime = 0;
-    let startDTime = performance.now();
+    let fullContractionTotalTime = 0;
+    let discoveryTime = 0;
+    let discoveryStartingTime = performance.now();
 
     for(let repeat = 0; repeat < repetitions; repeat++){
-        let startFCTime = performance.now();
+        let fullContractionStartingTime = performance.now();
         let cut = fullContraction(graph);
-        meanFCTime += performance.now() - startFCTime;
+        fullContractionTotalTime += performance.now() - fullContractionStartingTime;
 
         if(cut < minCut){
             minCut = cut;
-            DTime = performance.now() - startDTime;
+            discoveryTime = performance.now() - discoveryStartingTime;
         }
     }
-
-    return [minCut, meanFCTime/repetitions, DTime];
+    return [minCut, fullContractionTotalTime/repetitions, discoveryTime];
 }
 
 function fullContraction(graph: Graph): number{
@@ -58,21 +57,27 @@ function contraction(graph: Graph, edge: Edge): Graph{
     let firstNode, secondNode: string;
 
     [firstNode, secondNode] = edge.getNodes();
+    //recupero le liste di adiacenza dei due nodi scelti
     let firstADJ = graph.getAdjacentNodesOf(firstNode);
     let secondADJ = graph.getAdjacentNodesOf(secondNode);
     
+    //rimuovo tutte le occorrenze di secondNode da firstADJ e firstNode da secondADJ
     firstADJ = removeFrom(firstADJ, secondNode);
     secondADJ = removeFrom(secondADJ, firstNode);
 
-    //elimino tutte le relazioni di firstNode e secondNode (sia lista di adiacenza che lati)
+    //elimino tutte le relazioni di firstNode e secondNode presenti nel grafo.
+    //elimino quindi tutti i lati che contengono firstNode/secondNode ed elimino dalle liste di adiacenza tutte le occorrenze di firstNode e secondNode
     graph.deleteNode(firstNode);
     graph.deleteNode(secondNode)
 
     //creo il nuovo nodo e la sua nuova lista di adiacenza
     let newNode = firstNode + "," + secondNode;
+    //questa lista di adiacenza non contiene nessun lato firstNode-secondNode perchè li ho eliminati prima con removeFrom
     let adjList = firstADJ.concat(secondADJ);
 
-    //aggiungo il nuovo nodo e la sua nuova lista di adiacenza (anche relazioni sui lati)
+    //aggiungo al grafo il nuovo nodo e la lista di adiacenza.
+    //questa operazione preve anche che ogni nodo che era precedentemente connesso con firstNode e/o secondNode ora venga connesso con newNode.
+    //tutti i lati che avevano o firstNode o secondNode (non entrambi perchè sono stati eliminati) ora contengono newNode al loro posto.
     graph.addNewNode(newNode, adjList);
 
     return graph;
@@ -107,7 +112,6 @@ function removeFrom(list: string[], element: string): string[]{
 
     return list
 }
-
 
 export{
     karger
