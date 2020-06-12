@@ -6,7 +6,7 @@ import {karger} from "./typecript_files/karger";
 let graphList = createGraphsFromFile();
 
 //──── Karger per minCut ────────────────────────────────────────────────
-for(let index = 0; index < 12; index++){
+for(let index = 0; index < graphList.length; index++){
     let randomCut, kargerTime, fullContractionTime, discoveryTime, numberOfRepetitions;
     let d_constant = 3;
     let graph = graphList[index];
