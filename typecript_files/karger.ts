@@ -31,7 +31,7 @@ function karger_impl(graph: Graph, repetitions: number): [number, number, number
     let startingTime = performance.now();
 
     for(let repeat = 0; repeat < repetitions; repeat++){
-        if(performance.now() - startingTime < 200000){//Timer che limita le iterazioni a circa 3 minuti
+        if(performance.now() - startingTime < 600000){//Timer che limita le iterazioni a circa 10 minuti
 
             let fullContractionStartingTime = performance.now();
             let cut = fullContraction(graph);
