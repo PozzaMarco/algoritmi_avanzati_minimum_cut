@@ -34,7 +34,9 @@ function karger_impl(graph: Graph, repetitions: number): [number, number, number
         if(performance.now() - startingTime < 600000){//Timer che limita le iterazioni a circa 10 minuti
 
             let fullContractionStartingTime = performance.now();
-            let cut = fullContraction(graph);
+
+            let cut = fullContraction(graph); //Operazione di FullContraction
+
             fullContractionTotalTime += performance.now() - fullContractionStartingTime;
 
             if(cut < minCut){
@@ -47,9 +49,9 @@ function karger_impl(graph: Graph, repetitions: number): [number, number, number
 }
 
 function fullContraction(graph: Graph): number{
-    let contractedGraph : Graph = graph.makeCopy(); //Creo una copia dell'oggetto
+    let contractedGraph : Graph = graph.makeCopy(); //Creo una copia del grafo
 
-    while(contractedGraph.getNumberOfNodes() > 2){
+    while(contractedGraph.getNumberOfNodes() > 2){ //finchè non rimango con due nodi
         let edge = randomEdge(contractedGraph.getEdges());
         contractedGraph = contraction(contractedGraph, edge);
     }
