@@ -1,438 +1,438 @@
 1) input_random_01_6
-    Total time: 0.008210105000063778 s
+    Total time: 0,008210105000063778 s
     Constant d: 3
     Number of repetitions required: 97
-    FullContraction AVG time: 0.0000809805051558027 s
-    Discovery time: 0.0005665719999233261 s
+    FullContraction AVG time: 0,0000809805051558027 s
+    Discovery time: 0,0005665719999233261 s
     Karger cut: 2
     Optimal cut: 2
     Error: 0 %
     ------------------
     
 2) input_random_02_6
-    Total time: 0.00608041699999012 s
+    Total time: 0,00608041699999012 s
     Constant d: 3
     Number of repetitions required: 97
-    FullContraction AVG time: 0.00006014922680093225 s
-    Discovery time: 0.0002033469999441877 s
+    FullContraction AVG time: 0,00006014922680093225 s
+    Discovery time: 0,0002033469999441877 s
     Karger cut: 1
     Optimal cut: 1
     Error: 0 %
     ------------------
     
 3) input_random_03_6
-    Total time: 0.004656064999988303 s
+    Total time: 0,004656064999988303 s
     Constant d: 3
     Number of repetitions required: 97
-    FullContraction AVG time: 0.000045958474222042585 s
-    Discovery time: 0.00032563300000038 s
+    FullContraction AVG time: 0,000045958474222042585 s
+    Discovery time: 0,00032563300000038 s
     Karger cut: 3
     Optimal cut: 3
     Error: 0 %
     ------------------
     
 4) input_random_04_6
-    Total time: 0.06656125699996483 s
+    Total time: 0,06656125699996483 s
     Constant d: 3
     Number of repetitions required: 97
-    FullContraction AVG time: 0.000684036051534049 s
-    Discovery time: 0.0000914399999892339 s
+    FullContraction AVG time: 0,000684036051534049 s
+    Discovery time: 0,0000914399999892339 s
     Karger cut: 4
     Optimal cut: 4
     Error: 0 %
     ------------------
     
 5) input_random_05_10
-    Total time: 0.031253281999961476 s
+    Total time: 0,031253281999961476 s
     Constant d: 3
     Number of repetitions required: 346
-    FullContraction AVG time: 0.00008810152311915683 s
-    Discovery time: 0.0005844039999647066 s
+    FullContraction AVG time: 0,00008810152311915683 s
+    Discovery time: 0,0005844039999647066 s
     Karger cut: 4
     Optimal cut: 4
     Error: 0 %
     ------------------
     
 6) input_random_06_10
-    Total time: 0.026877119000069796 s
+    Total time: 0,026877119000069796 s
     Constant d: 3
     Number of repetitions required: 346
-    FullContraction AVG time: 0.0000756246011537322 s
-    Discovery time: 0.00006514500000048429 s
+    FullContraction AVG time: 0,0000756246011537322 s
+    Discovery time: 0,00006514500000048429 s
     Karger cut: 3
     Optimal cut: 3
     Error: 0 %
     ------------------
     
 7) input_random_07_10
-    Total time: 0.027161158000002614 s
+    Total time: 0,027161158000002614 s
     Constant d: 3
     Number of repetitions required: 346
-    FullContraction AVG time: 0.00007722135259994613 s
-    Discovery time: 0.0009253010000102222 s
+    FullContraction AVG time: 0,00007722135259994613 s
+    Discovery time: 0,0009253010000102222 s
     Karger cut: 2
     Optimal cut: 2
     Error: 0 %
     ------------------
-    
-9) input_random_09_25
-    Total time: 1.5229032489999663 s
-    Constant d: 3
-    Number of repetitions required: 3018
-    FullContraction AVG time: 0.0004995896994717425 s
-    Discovery time: 0.006149234000011348 s
-    Karger cut: 7
-    Optimal cut: 7
-    Error: 0 %
-    ------------------
-    
-8) input_random_08_10
-    Total time: 0.02794654899998568 s
+ 8) input_random_08_10
+    Total time: 0,02794654899998568 s
     Constant d: 3
     Number of repetitions required: 346
-    FullContraction AVG time: 0.0000796243612724491 s
-    Discovery time: 0.00017093999998178333 s
+    FullContraction AVG time: 0,0000796243612724491 s
+    Discovery time: 0,00017093999998178333 s
     Karger cut: 1
     Optimal cut: 1
     Error: 0 %
     ------------------
     
-11) input_random_11_25
-    Total time: 1.504504561000038 s
+9) input_random_09_25
+    Total time: 1,5229032489999663 s
     Constant d: 3
     Number of repetitions required: 3018
-    FullContraction AVG time: 0.0004978618668003864 s
-    Discovery time: 0.0010386940001044422 s
+    FullContraction AVG time: 0,0004995896994717425 s
+    Discovery time: 0,006149234000011348 s
+    Karger cut: 7
+    Optimal cut: 7
+    Error: 0 %
+    ------------------
+    
+10) input_random_10_25
+    Total time: 1,541968445000006 s
+    Constant d: 3
+    Number of repetitions required: 3018
+    FullContraction AVG time: 0,0005063910964210477 s
+    Discovery time: 0,0009615890000713989 s
+    Karger cut: 6
+    Optimal cut: 6
+    Error: 0 %
+    ------------------  
+    
+11) input_random_11_25
+    Total time: 1,504504561000038 s
+    Constant d: 3
+    Number of repetitions required: 3018
+    FullContraction AVG time: 0,0004978618668003864 s
+    Discovery time: 0,0010386940001044422 s
     Karger cut: 8
     Optimal cut: 8
     Error: 0 %
     ------------------
     
 12) input_random_12_25
-    Total time: 1.9561008320000255 s
+    Total time: 1,9561008320000255 s
     Constant d: 3
     Number of repetitions required: 3018
-    FullContraction AVG time: 0.0006470068807151977 s
-    Discovery time: 0.0030810730000957846 s
+    FullContraction AVG time: 0,0006470068807151977 s
+    Discovery time: 0,0030810730000957846 s
     Karger cut: 9
     Optimal cut: 9
     Error: 0 %
     ------------------
     
 13) input_random_13_50
-    Total time: 55.86220380399993 s
+    Total time: 55,86220380399993 s
     Constant d: 3
     Number of repetitions required: 14671
-    FullContraction AVG time: 0.0038064207049284767 s
-    Discovery time: 0.10578345799993258 s
+    FullContraction AVG time: 0,0038064207049284767 s
+    Discovery time: 0,10578345799993258 s
     Karger cut: 15
     Optimal cut: 15
     Error: 0 %
     ------------------
     
 14) input_random_14_50
-    Total time: 56.113932088 s
+    Total time: 56,113932088 s
     Constant d: 3
     Number of repetitions required: 14671
-    FullContraction AVG time: 0.003824117181104915 s
-    Discovery time: 0.026553507999982684 s
+    FullContraction AVG time: 0,003824117181104915 s
+    Discovery time: 0,026553507999982684 s
     Karger cut: 16
     Optimal cut: 16
     Error: 0 %
     ------------------
     
 15) input_random_15_50
-    Total time: 47.50085054999986 s
+    Total time: 47,50085054999986 s
     Constant d: 3
     Number of repetitions required: 14671
-    FullContraction AVG time: 0.0032370442663754314 s
-    Discovery time: 0.010063746999949217 s
+    FullContraction AVG time: 0,0032370442663754314 s
+    Discovery time: 0,010063746999949217 s
     Karger cut: 14
     Optimal cut: 14
     Error: 0 %
     ------------------
     
 16) input_random_16_50
-    Total time: 50.12580846299999 s
+    Total time: 50,12580846299999 s
     Constant d: 3
     Number of repetitions required: 14671
-    FullContraction AVG time: 0.003415999907096903 s
-    Discovery time: 0.007297156999818981 s
+    FullContraction AVG time: 0,003415999907096903 s
+    Discovery time: 0,007297156999818981 s
     Karger cut: 10
     Optimal cut: 10
     Error: 0 %
     ------------------
     
 17) input_random_17_75
-    Total time: 367.9486033379999 s
+    Total time: 367,9486033379999 s
     Constant d: 3
     Number of repetitions required: 36429
-    FullContraction AVG time: 0.010099121310001413 s
-    Discovery time: 0.06051541200000793 s
+    FullContraction AVG time: 0,010099121310001413 s
+    Discovery time: 0,06051541200000793 s
     Karger cut: 19
     Optimal cut: 19
     Error: 0 %
     ------------------
     
 18) input_random_18_75
-    Total time: 411.3930447430001 s
+    Total time: 411,3930447430001 s
     Constant d: 3
     Number of repetitions required: 36429
-    FullContraction AVG time: 0.0112915152204009 s
-    Discovery time: 0.023603164999978617 s
+    FullContraction AVG time: 0,0112915152204009 s
+    Discovery time: 0,023603164999978617 s
     Karger cut: 15
     Optimal cut: 15
     Error: 0 %
     ------------------
     
 19) input_random_19_75
-    Total time: 383.5657419879998 s
+    Total time: 383,5657419879998 s
     Constant d: 3
     Number of repetitions required: 36429
-    FullContraction AVG time: 0.010527705239753018 s
-    Discovery time: 0.012333266000030563 s
+    FullContraction AVG time: 0,010527705239753018 s
+    Discovery time: 0,012333266000030563 s
     Karger cut: 18
     Optimal cut: 18
     Error: 0 %
     ------------------
     
 20) input_random_20_75
-    Total time: 358.56943843600015 s
+    Total time: 358,56943843600015 s
     Constant d: 3
     Number of repetitions required: 36429
-    FullContraction AVG time: 0.00984151200296585 s
-    Discovery time: 0.13920630600024014 s
+    FullContraction AVG time: 0,00984151200296585 s
+    Discovery time: 0,13920630600024014 s
     Karger cut: 16
     Optimal cut: 16
     Error: 0 %
     ------------------
     
 21) input_random_21_100
-    Total time: 600.023862376 s
+    Total time: 600,023862376 s
     Constant d: 3
     Number of repetitions required: 69078
-    FullContraction AVG time: 0.008685039974058244 s
-    Discovery time: 0.3587170380000025 s
+    FullContraction AVG time: 0,008685039974058244 s
+    Discovery time: 0,3587170380000025 s
     Karger cut: 22
     Optimal cut: 22
     Error: 0 %
     ------------------
     
 22) input_random_22_100
-    Total time: 600.0203439790001 s
+    Total time: 600,0203439790001 s
     Constant d: 3
     Number of repetitions required: 69078
-    FullContraction AVG time: 0.00868507697065547 s
-    Discovery time: 0.1459160310002044 s
+    FullContraction AVG time: 0,00868507697065547 s
+    Discovery time: 0,1459160310002044 s
     Karger cut: 23
     Optimal cut: 23
     Error: 0 %
     ------------------
     
 23) input_random_23_100
-    Total time: 600.0307493690001 s
+    Total time: 600,0307493690001 s
     Constant d: 3
     Number of repetitions required: 69078
-    FullContraction AVG time: 0.008685337561609727 s
-    Discovery time: 0.4231143229994923 s
+    FullContraction AVG time: 0,008685337561609727 s
+    Discovery time: 0,4231143229994923 s
     Karger cut: 19
     Optimal cut: 19
     Error: 0 %
     ------------------
     
 24) input_random_24_100
-    Total time: 600.0341527270004 s
+    Total time: 600,0341527270004 s
     Constant d: 3
     Number of repetitions required: 69078
-    FullContraction AVG time: 0.008685340602245928 s
-    Discovery time: 0.0762513279998675 s
+    FullContraction AVG time: 0,008685340602245928 s
+    Discovery time: 0,0762513279998675 s
     Karger cut: 24
     Optimal cut: 24
     Error: 0 %
     ------------------
     
 25) input_random_25_125
-    Total time: 600.023826804 s
+    Total time: 600,023826804 s
     Constant d: 3
     Number of repetitions required: 113164
-    FullContraction AVG time: 0.005301838144878358 s
-    Discovery time: 0.12375337000004948 s
+    FullContraction AVG time: 0,005301838144878358 s
+    Discovery time: 0,12375337000004948 s
     Karger cut: 34
     Optimal cut: 34
     Error: 0 %
     ------------------
     
 26) input_random_26_125
-    Total time: 600.037490332 s
+    Total time: 600,037490332 s
     Constant d: 3
     Number of repetitions required: 113164
-    FullContraction AVG time: 0.005301944263096241 s
-    Discovery time: 0.41436810899991544 s
+    FullContraction AVG time: 0,005301944263096241 s
+    Discovery time: 0,41436810899991544 s
     Karger cut: 29
     Optimal cut: 29
     Error: 0 %
     ------------------
     
 27) input_random_27_125
-    Total time: 600.0800056290002 s
+    Total time: 600,0800056290002 s
     Constant d: 3
     Number of repetitions required: 113164
-    FullContraction AVG time: 0.005302341015172746 s
-    Discovery time: 1.167750829000026 s
+    FullContraction AVG time: 0,005302341015172746 s
+    Discovery time: 1,167750829000026 s
     Karger cut: 36
     Optimal cut: 36
     Error: 0 %
     ------------------
     
 28) input_random_28_125
-    Total time: 600.0465710210009 s
+    Total time: 600,0465710210009 s
     Constant d: 3
     Number of repetitions required: 113164
-    FullContraction AVG time: 0.005302012779196786 s
-    Discovery time: 0.9092401569997892 s
+    FullContraction AVG time: 0,005302012779196786 s
+    Discovery time: 0,9092401569997892 s
     Karger cut: 31
     Optimal cut: 31
     Error: 0 %
     ------------------
     
 29) input_random_29_150
-    Total time: 601.4761978719998 s
+    Total time: 601,4761978719998 s
     Constant d: 3
     Number of repetitions required: 169109
-    FullContraction AVG time: 0.0035565530301285204 s
-    Discovery time: 18.794087888999844 s
+    FullContraction AVG time: 0,0035565530301285204 s
+    Discovery time: 18,794087888999844 s
     Karger cut: 37
     Optimal cut: 37
     Error: 0 %
     ------------------
     
 30) input_random_30_150
-    Total time: 600.1480303349998 s
+    Total time: 600,1480303349998 s
     Constant d: 3
     Number of repetitions required: 169109
-    FullContraction AVG time: 0.0035486388289207448 s
-    Discovery time: 1.420799508999102 s
+    FullContraction AVG time: 0,0035486388289207448 s
+    Discovery time: 1,420799508999102 s
     Karger cut: 35
     Optimal cut: 35
     Error: 0 %
     ------------------
     
 31) input_random_31_150
-    Total time: 600.1163915260006 s
+    Total time: 600,1163915260006 s
     Constant d: 3
     Number of repetitions required: 169109
-    FullContraction AVG time: 0.0035484498411086614 s
-    Discovery time: 0.37098026599921285 s
+    FullContraction AVG time: 0,0035484498411086614 s
+    Discovery time: 0,37098026599921285 s
     Karger cut: 41
     Optimal cut: 41
     Error: 0 %
     ------------------
     
-10) input_random_10_25
-    Total time: 1.541968445000006 s
-    Constant d: 3
-    Number of repetitions required: 3018
-    FullContraction AVG time: 0.0005063910964210477 s
-    Discovery time: 0.0009615890000713989 s
-    Karger cut: 6
-    Optimal cut: 6
-    Error: 0 %
-    ------------------
     
 32) input_random_32_150
-    Total time: 600.5045652610007 s
+    Total time: 600,5045652610007 s
     Constant d: 3
     Number of repetitions required: 169109
-    FullContraction AVG time: 0.003550804237846625 s
-    Discovery time: 45.01574264300056 s
+    FullContraction AVG time: 0,003550804237846625 s
+    Discovery time: 45,01574264300056 s
     Karger cut: 39
     Optimal cut: 39
     Error: 0 %
     ------------------
     
 33) input_random_33_175
-    Total time: 601.0342086239997 s
+    Total time: 601,0342086239997 s
     Constant d: 3
     Number of repetitions required: 237258
-    FullContraction AVG time: 0.002533078136547492 s
-    Discovery time: 64.32759906500019 s
+    FullContraction AVG time: 0,002533078136547492 s
+    Discovery time: 64,32759906500019 s
     Karger cut: 42
     Optimal cut: 42
     Error: 0 %
     ------------------
     
 34) input_random_34_175
-    Total time: 601.0375910550002 s
+    Total time: 601,0375910550002 s
     Constant d: 3
     Number of repetitions required: 237258
-    FullContraction AVG time: 0.002533092556234141 s
-    Discovery time: 10.653630973998457 s
+    FullContraction AVG time: 0,002533092556234141 s
+    Discovery time: 10,653630973998457 s
     Karger cut: 45
     Optimal cut: 45
     Error: 0 %
     ------------------
     
 35) input_random_35_175
-    Total time: 600.4722390199993 s
+    Total time: 600,4722390199993 s
     Constant d: 3
     Number of repetitions required: 237258
-    FullContraction AVG time: 0.0025307107753879676 s
-    Discovery time: 34.40990013100021 s
+    FullContraction AVG time: 0,0025307107753879676 s
+    Discovery time: 34,40990013100021 s
     Karger cut: 53
     Optimal cut: 53
     Error: 0 %
     ------------------
     
 36) input_random_36_175
-    Total time: 600.8248491740003 s
+    Total time: 600,8248491740003 s
     Constant d: 3
     Number of repetitions required: 237258
-    FullContraction AVG time: 0.002532192864704221 s
-    Discovery time: 85.59973123200051 s
+    FullContraction AVG time: 0,002532192864704221 s
+    Discovery time: 85,59973123200051 s
     Karger cut: 43
     Optimal cut: 43
     Error: 0 %
     ------------------
     
 37) input_random_37_200
-    Total time: 600.6064702790007 s
+    Total time: 600,6064702790007 s
     Constant d: 3
     Number of repetitions required: 317900
-    FullContraction AVG time: 0.0018891233291695865 s
-    Discovery time: 58.314939285999166 s
+    FullContraction AVG time: 0,0018891233291695865 s
+    Discovery time: 58,314939285999166 s
     Karger cut: 54
     Optimal cut: 54
     Error: 0 %
     ------------------
     
 38) input_random_38_200
-    Total time: 601.6032801689989 s
+    Total time: 601,6032801689989 s
     Constant d: 3
     Number of repetitions required: 317900
-    FullContraction AVG time: 0.0018922587137433023 s
-    Discovery time: 53.29530198100023 s
+    FullContraction AVG time: 0,0018922587137433023 s
+    Discovery time: 53,29530198100023 s
     Karger cut: 52
     Optimal cut: 52
     Error: 0 %
     ------------------
     
 39) input_random_39_200
-    Total time: 600.3772946990002 s
+    Total time: 600,3772946990002 s
     Constant d: 3
     Number of repetitions required: 317900
-    FullContraction AVG time: 0.0018883993189902485 s
-    Discovery time: 50.06079927899875 s
+    FullContraction AVG time: 0,0018883993189902485 s
+    Discovery time: 50,06079927899875 s
     Karger cut: 51
     Optimal cut: 51
     Error: 0 %
     ------------------
     
 40) input_random_40_200
-    Total time: 601.1471985749994 s
+    Total time: 601,1471985749994 s
     Constant d: 3
     Number of repetitions required: 317900
-    FullContraction AVG time: 0.001890823190789576 s
-    Discovery time: 80.37334767400101 s
+    FullContraction AVG time: 0,001890823190789576 s
+    Discovery time: 80,37334767400101 s
     Karger cut: 61
     Optimal cut: 61
     Error: 0 %
